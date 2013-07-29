@@ -61,8 +61,8 @@ public class DeviceSelectionDialog {
     public DeviceSelectionDialog(Context context) {
         mContext = context;
         mDeviceAdapter = new CastDeviceAdapter(mContext);
-        mDeviceManager = new DeviceManager(
-                TicTacToeApplication.getInstance().getCastContext());
+        TicTacToeApplication app = TicTacToeApplication.getInstance();
+        mDeviceManager = new DeviceManager(app.getCastContext());
         mDeviceManager.addListener(new DeviceManager.Listener() {
             @Override
             public void onScanStateChanged(int state) {

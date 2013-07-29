@@ -54,7 +54,10 @@ public class TicTacToeApplication extends Application {
      * Returns the instance of this class that is currently running.
      */
     public static TicTacToeApplication getInstance() {
-        return singleton;
+      if (singleton == null) {
+        throw new NullPointerException("null here");
+      }
+      return singleton;
     }
 
     /**
